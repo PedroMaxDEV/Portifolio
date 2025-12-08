@@ -1,0 +1,23 @@
+[
+   
+
+     {
+        "tipo": "carrossel",
+        "arquivos": [
+            "midias/UBANNET_01.png",
+            "midias/UBANNET_02.png",
+            "midias/UBANNET_03.png",
+            "midias/UBANNET_04.png",
+            "midias/UBANNET_05.png",
+            "midias/UBANNET_06.png"
+        ],
+        "titulo": "Carrossel Redes Sociais para empresa de provedor de internet",
+        "descricao": "3 páginas de Instagram.",
+        "data": "2025-02-08"
+    },
+        {
+        "tipo": "a4",
+        "arquivo": "midias/postcarrosel.png",
+        "data": "2025-02-02"
+    }
+]

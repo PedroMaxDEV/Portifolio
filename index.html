@@ -1,161 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jocelia Festa</title>
-  <link rel="icon" href="img/JF.png" type="image/png">
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <style>
-    #welcomeModal {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 9999;
-    }
-
-    #welcomeBox {
-      background: #fff;
-      padding: 30px;
-      border-radius: 20px;
-      text-align: center;
-      max-width: 400px;
-      width: 90%;
-      animation: fadeInDown 1s;
-    }
-
-    #welcomeBox input {
-      padding: 10px;
-      width: 80%;
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-    #welcomeBox button {
-      background-color: #ef4896;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 12px;
-      margin-top: 15px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Pedro Max</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <div id="confetti-container"></div>
 
-  <div id="welcomeModal">
-    <div id="welcomeBox" class="animate__animated animate__fadeInDown">
-      <h2>Bem-vindo ao site da Jocelia Festas!</h2>
-      <p>Digite seu nome para continuar:</p>
-      <input type="text" id="userName" placeholder="Seu nome" />
-      <br />
-      <button onclick="enterSite()">Entrar</button>
+<header>
+    <div id="perfil">
+        <img src="midias/minha-foto.jpg" alt="Foto de Pedro Max">
+        <h1>Pedro Max</h1>
+        <p>Designer, Social Media e Editor • Max Store</p>
     </div>
-  </div>
-  
-  <header>
-<div class="logo-container">
-  <img src="img/JF.png" class="logo-icon" alt="Ícone esquerdo" />
-  <h1>JOCELIA FESTAS</h1>
-  <img src="img/confete.png" class="logo-icon" alt="Ícone direito" />
-</div>
-    <div class="logo"><img src="img/JF.PNG" alt=""></div>
-<div class="confete"><img src="img/confete.png" alt=""></div>
-  
-    <input type="text" id="searchBar" placeholder="Buscar produtos, ID ou palavras-chave..." />
-    <ul id="suggestions"></ul>
-    <button id="openCart">🛒 Carrinho</button>
-  </header>
 
-  <nav>
-    <div class="categories">
-      <button class="category-btn" data-category="destaques">Destaques</button>
-      <button class="category-btn" data-category="kits">Kits</button>
-      <button class="category-btn" data-category="Decorações">Decorações</button>
-      <button class="category-btn" data-category="Paineis">Paineis</button>
-      <button class="category-btn" data-category="Mesas">Mesas</button>
-      <button class="category-btn" data-category="itens avulsos">Itens Avulsos</button>
-      <button class="category-btn" data-category="todos">Todos</button>
-    </div>
-  </nav>
+</header>
 
-  <main id="productList"></main>
+<section id="portfolio"></section>
 
-  <div id="cartModal" class="modal">
-    <div class="modal-content">
-      <span id="closeCart" class="close">&times;</span>
-      <h2>Carrinho</h2>
-      <ul id="cartItems"></ul>
-      <p id="cartTotal">Total: R$ 0,00</p>
-      <input type="text" id="cupomInput" placeholder="Cupom de desconto" />
-      <button id="applyCupom">Aplicar Cupom</button>
-      <button id="finalizarCompra">Finalizar Compra via WhatsApp</button>
-    </div>
-  </div>
-
-  <div id="imageModal" class="modal">
-    <div class="modal-image-content">
-      <span class="close" id="closeImageModal">&times;</span>
-      <img id="modalImage" />
-      <div class="nav-buttons">
-        <button id="prevImage">⏴</button>
-        <button id="nextImage">⏵</button>
-        <button class="close" id="closeImageBtn">✖</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="notification" class="hidden">Produto adicionado ao carrinho!</div>
-
-  <script>
-    function enterSite() {
-      const name = document.getElementById('userName').value.trim();
-      if (name !== '') {
-        localStorage.setItem('visitorName', name);
-        document.getElementById('welcomeModal').style.display = 'none';
-      } else {
-        alert('Por favor, digite seu nome.');
-      }
-    }
-  </script>
-
-  <script src="js/script.js"></script>
-
-<script>
-  const container = document.getElementById('confetti-container');
-  const cores = ['#ffff00', '#ef4896', '#63d2bf', '#f87171', '#a78bfa'];
-
-  function criarConfete() {
-    const confete = document.createElement('span');
-    confete.classList.add('confetti');
-    const tamanho = Math.floor(Math.random() * 9) + 4;
-    confete.style.width = `${tamanho}px`;
-    confete.style.height = `${tamanho}px`;
-    confete.style.left = `${Math.random() * 100}%`;
-    confete.style.backgroundColor = cores[Math.floor(Math.random() * cores.length)];
-    confete.style.animationDuration = `${2 + Math.random() * 3}s`;
-    confete.style.animationDelay = `${Math.random()}s`;
-    container.appendChild(confete);
-    setTimeout(() => confete.remove(), 50000);
-  }
-
-  setInterval(criarConfete, 100);
-</script>
-
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-<script src="js/firebase-config.js"></script>
-
-
+<script src="script.js"></script>
 </body>
 </html>

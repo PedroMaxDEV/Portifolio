@@ -1,0 +1,236 @@
+/* =============================
+   RESET + CONFIGURAÇÕES GERAIS
+   ============================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #0f0f10;
+    color: #fff;
+    padding: 20px;
+}
+
+/* =============================
+   HEADER / PERFIL
+   ============================= */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: aparecer 1.2s ease forwards;
+    opacity: 0;
+}
+
+#perfil img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    margin-bottom: 10px;
+}
+
+#perfil h1 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+#perfil p {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #bdbdbd;
+}
+
+/* =============================
+   CONTAINER DO PORTFÓLIO
+   ============================= */
+#portfolio {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* Card geral */
+.item {
+    background: #1a1a1d;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.6s ease;
+}
+
+.item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================
+   IMAGENS / VÍDEOS GERAIS
+   ============================= */
+.item img,
+.item video {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* A4 — mantendo proporção */
+.a4-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
+    background: #fff;
+    padding: 10px;
+}
+
+/* =============================
+   TEXTOS
+   ============================= */
+.texto {
+    margin-top: 15px;
+}
+
+.texto h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.texto p {
+    font-size: 14px;
+    color: #cfcfcf;
+}
+
+/* =============================
+   CARROSSEL
+   ============================= */
+.carrossel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    display: flex;
+}
+
+.carrossel-track {
+    display: flex;
+    gap: 10px;
+}
+
+.carrossel-img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+    scroll-snap-align: start;
+}
+
+/* Remove barra feia do scroll */
+.carrossel::-webkit-scrollbar {
+    height: 8px;
+}
+.carrossel::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+/* =============================
+   SLIDE (próximo e anterior)
+   ============================= */
+.slide-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.slide-view {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide-img {
+    min-width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Botões */
+.slide-container button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.slide-container button:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.slide-container .prev {
+    left: 10px;
+}
+.slide-container .next {
+    right: 10px;
+}
+
+/* =============================
+   RESPONSIVIDADE
+   ============================= */
+@media (max-width: 900px) {
+    .carrossel-img,
+    .slide-img {
+        height: 320px;
+    }
+}
+
+@media (max-width: 600px) {
+    #perfil img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .carrossel-img,
+    .slide-img {
+        height: 260px;
+    }
+
+    .item {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .carrossel-img,
+    .slide-img {
+        height: 220px;
+    }
+}
+
+/* =============================
+   ANIMAÇÕES
+   ============================= */
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
