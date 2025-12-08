@@ -493,4 +493,17 @@ body {
 .carrossel::-webkit-scrollbar-thumb:hover {
     background: #666;
 }
+@media (max-width: 600px) {   /* ajuste o tamanho se quiser */
+    .role-wrap {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (max-width: 600px) {
+    #typed,
+    .typed-cursor {
+        text-align: center;
+    }
+}
 
