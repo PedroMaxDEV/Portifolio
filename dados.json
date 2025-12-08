@@ -1,11 +1,12 @@
 [
- {
+    {
         "tipo": "a4",
         "arquivo": "midias/postcarrosel.png",
         "titulo": "Carrossel para Provedor de Internet",
         "descricao": "Sequência completa de artes profissionais desenvolvidas para a UBANNET, com foco em comunicação digital e conversão.",
         "data": "2025-02-02"
     },
+
     {
         "tipo": "carrossel",
         "arquivos": [
@@ -17,16 +18,16 @@
             "midias/UBANNET_06.png",
             "midias/UBANNET_07.png"
         ],
-        "titulo":"Resultado do Carrossel",
-        "descricao":"Arraste para o lado ->",
+        "titulo": "Resultado do Carrossel",
+        "descricao": "Arraste para o lado →",
         "data": "2025-02-08"
     },
 
     {
         "tipo": "video",
         "arquivo": "midias/Criacao_Post_Carrossel_Ubannet.mp4",
-        "titulo": "Timelapse",
-        "descricao": "Vídeo apresentando o processo de criação",
+        "titulo": "Timelapse de Criação",
+        "descricao": "Vídeo demonstrando o processo completo de criação das artes.",
         "data": "2025-02-10"
     },
 
@@ -38,80 +39,73 @@
             "midias/data3.png"
         ],
         "titulo": "Slide de Apresentação",
-        "descricao": "Trabalho da Faculdade.",
+        "descricao": "Trabalho acadêmico desenvolvido para apresentação.",
         "data": "2025-02-05"
     },
- {
+
+    {
         "tipo": "carrossel",
         "arquivos": [
             "midias/personal.jpg"
         ],
-        "titulo": "Post de feed para personal",
-        "descricao": "Conteudo promocional",
+        "titulo": "Post de Feed para Personal Trainer",
+        "descricao": "Conteúdo promocional desenvolvido para potencializar engajamento.",
         "data": "2025-02-05"
-},
-{
+    },
+
+    {
         "tipo": "video",
         "arquivo": "midias/banner.mp4",
-        "titulo": "Banner para instagram",
-        "descricao": "Deixando o perfil mais organizado!",
+        "titulo": "Banner para Instagram",
+        "descricao": "Animação criada para deixar o perfil mais organizado e atrativo.",
         "data": "2025-02-10"
     },
 
- {
+    {
         "tipo": "carrossel",
-        "arquivos": [
-            "midias/fut.jpg"
-        ],
-        "titulo": "Post de story de Futbol",
+        "arquivos": ["midias/fut.jpg"],
+        "titulo": "Post de Story de Futebol",
         "descricao": "",
         "data": "2025-02-05"
-},
-{
-        "tipo": "carrossel",
-        "arquivos": [
-            "midias/fut1.jpg"
-        ],
-        "titulo": "Post de story de Futbol",
-        "descricao": "",
-        "data": "2025-02-05"
-},
-{
-        "tipo": "carrossel",
-        "arquivos": [
-            "midias/fut2.jpg"
-        ],
-        "titulo": "Post de story de Futbol",
-        "descricao": "",
-        "data": "2025-02-05"
-},
-{
-        "tipo": "carrossel",
-        "arquivos": [
-            "midias/evento.jpg"
-        ],
-        "titulo": "Post de feed para evento de DJ",
-        "descricao": "",
-        "data": "2025-02-05"
-},
-{
-        "tipo": "carrossel",
-        "arquivos": [
-            "midias/evento2.jpg"
-        ],
-        "titulo": "Post de story para evento de DJ",
-        "descricao": "",
-        "data": "2025-02-05"
-},
-{
-        "tipo": "carrossel",
-        "arquivos": [
-            "midias/logo.jpg"
-        ],
-        "titulo": "LOGOMARCA",
-        "descricao": "",
-        "data": "2025-02-05"
-}
+    },
 
+    {
+        "tipo": "carrossel",
+        "arquivos": ["midias/fut1.jpg"],
+        "titulo": "Post de Story de Futebol",
+        "descricao": "",
+        "data": "2025-02-05"
+    },
 
+    {
+        "tipo": "carrossel",
+        "arquivos": ["midias/fut2.jpg"],
+        "titulo": "Post de Story de Futebol",
+        "descricao": "",
+        "data": "2025-02-05"
+    },
+
+    {
+        "tipo": "carrossel",
+        "arquivos": ["midias/evento.jpg"],
+        "titulo": "Post de Feed para Evento de DJ",
+        "descricao": "",
+        "data": "2025-02-05"
+    },
+
+    {
+        "tipo": "carrossel",
+        "arquivos": ["midias/evento2.jpg"],
+        "titulo": "Post de Story para Evento de DJ",
+        "descricao": "",
+        "data": "2025-02-05"
+    },
+
+    {
+        "tipo": "carrossel",
+        "arquivos": ["midias/logo.jpg"],
+        "titulo": "Logomarca",
+        "descricao": "",
+        "data": "2025-02-05"
+    }
 ]
