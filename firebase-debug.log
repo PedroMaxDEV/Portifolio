@@ -1,0 +1,136 @@
+[debug] [2025-10-10T03:35:18.322Z] ----------------------------------------------------------------------
+[debug] [2025-10-10T03:35:18.326Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Pedro Max\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-10-10T03:35:18.327Z] CLI Version:   14.19.1
+[debug] [2025-10-10T03:35:18.327Z] Platform:      win32
+[debug] [2025-10-10T03:35:18.327Z] Node Version:  v22.14.0
+[debug] [2025-10-10T03:35:18.327Z] Time:          Fri Oct 10 2025 00:35:18 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2025-10-10T03:35:18.327Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-10-10T03:35:18.593Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-10-10T03:35:18.593Z] > authorizing via signed-in user (irmao.max09@gmail.com)
+[debug] [2025-10-10T03:35:18.594Z] [iam] checking project jocelia-festas-1f6fe for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-10-10T03:35:18.595Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:35:18.595Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:35:18.596Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/jocelia-festas-1f6fe:testIamPermissions [none]
+[debug] [2025-10-10T03:35:18.596Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/jocelia-festas-1f6fe:testIamPermissions x-goog-quota-user=projects/jocelia-festas-1f6fe
+[debug] [2025-10-10T03:35:18.597Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/jocelia-festas-1f6fe:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-10-10T03:35:19.657Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/jocelia-festas-1f6fe:testIamPermissions 200
+[debug] [2025-10-10T03:35:19.659Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/jocelia-festas-1f6fe:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-10-10T03:35:19.660Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:35:19.661Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:35:19.661Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/jocelia-festas-1f6fe/serviceAccounts/jocelia-festas-1f6fe@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-10-10T03:35:19.661Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/jocelia-festas-1f6fe/serviceAccounts/jocelia-festas-1f6fe@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-10-10T03:35:21.134Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/jocelia-festas-1f6fe/serviceAccounts/jocelia-festas-1f6fe@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-10-10T03:35:21.135Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/jocelia-festas-1f6fe/serviceAccounts/jocelia-festas-1f6fe@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-10-10T03:35:21.135Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:35:21.135Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:35:21.136Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/jocelia-festas-1f6fe [none]
+[debug] [2025-10-10T03:35:21.933Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/jocelia-festas-1f6fe 200
+[debug] [2025-10-10T03:35:21.934Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/jocelia-festas-1f6fe {"projectId":"jocelia-festas-1f6fe","projectNumber":"629624073079","displayName":"Jocelia-Festas","name":"projects/jocelia-festas-1f6fe","resources":{"hostingSite":"jocelia-festas-1f6fe"},"state":"ACTIVE","etag":"1_cd0c828e-2fc8-4bc3-b291-3658cce3e09a"}
+[info] 
+[info] === Deploying to 'jocelia-festas-1f6fe'...
+[info] 
+[info] i  deploying functions, hosting 
+[debug] [2025-10-10T03:35:21.955Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:35:21.955Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:35:21.955Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/jocelia-festas-1f6fe [none]
+[debug] [2025-10-10T03:35:22.219Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/jocelia-festas-1f6fe 200
+[debug] [2025-10-10T03:35:22.220Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/jocelia-festas-1f6fe {"projectNumber":"629624073079","projectId":"jocelia-festas-1f6fe","lifecycleState":"ACTIVE","name":"Jocelia-Festas","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-10-10T02:20:56.518145Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-10-10T03:35:22.254Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:35:22.255Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:35:22.255Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/jocelia-festas-1f6fe/adminSdkConfig [none]
+[debug] [2025-10-10T03:35:22.703Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/jocelia-festas-1f6fe/adminSdkConfig 200
+[debug] [2025-10-10T03:35:22.703Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/jocelia-festas-1f6fe/adminSdkConfig {"projectId":"jocelia-festas-1f6fe","storageBucket":"jocelia-festas-1f6fe.firebasestorage.app"}
+[debug] [2025-10-10T03:35:22.704Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:35:22.704Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:35:22.704Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/jocelia-festas-1f6fe/configs [none]
+[debug] [2025-10-10T03:35:23.986Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/jocelia-festas-1f6fe/configs 200
+[debug] [2025-10-10T03:35:23.986Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/jocelia-festas-1f6fe/configs {}
+[debug] [2025-10-10T03:35:23.990Z] Validating nodejs source
+[debug] [2025-10-10T03:35:26.032Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-10-10T03:35:26.032Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2025-10-10T03:36:21.576Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-10-10T03:36:21.611Z] Found firebase-functions binary at 'C:\Users\Pedro Max\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8975
+
+[debug] [2025-10-10T03:36:23.087Z] Got response from /__/functions.yaml {"endpoints":{},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2025-10-10T03:36:27.131Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-10-10T03:36:27.132Z] > authorizing via signed-in user (irmao.max09@gmail.com)
+[debug] [2025-10-10T03:36:27.132Z] [iam] checking project jocelia-festas-1f6fe for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2025-10-10T03:36:27.133Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:36:27.133Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:36:27.133Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/jocelia-festas-1f6fe:testIamPermissions [none]
+[debug] [2025-10-10T03:36:27.133Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/jocelia-festas-1f6fe:testIamPermissions x-goog-quota-user=projects/jocelia-festas-1f6fe
+[debug] [2025-10-10T03:36:27.133Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/jocelia-festas-1f6fe:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2025-10-10T03:36:28.397Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/jocelia-festas-1f6fe:testIamPermissions 200
+[debug] [2025-10-10T03:36:28.398Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/jocelia-festas-1f6fe:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2025-10-10T03:36:28.398Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:36:28.398Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:36:28.399Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/jocelia-festas-1f6fe/instances pageSize=100&pageToken=
+[debug] [2025-10-10T03:36:30.862Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/jocelia-festas-1f6fe/instances 200
+[debug] [2025-10-10T03:36:30.862Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/jocelia-festas-1f6fe/instances {}
+[debug] [2025-10-10T03:36:30.865Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:36:30.865Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:36:30.865Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/jocelia-festas-1f6fe/locations/-/functions [none]
+[debug] [2025-10-10T03:36:32.163Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/jocelia-festas-1f6fe/locations/-/functions 200
+[debug] [2025-10-10T03:36:32.163Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/jocelia-festas-1f6fe/locations/-/functions {}
+[debug] [2025-10-10T03:36:32.164Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:36:32.164Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:36:32.164Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/jocelia-festas-1f6fe/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2025-10-10T03:36:33.393Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/jocelia-festas-1f6fe/locations/-/functions 200
+[debug] [2025-10-10T03:36:33.393Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/jocelia-festas-1f6fe/locations/-/functions {}
+[debug] [2025-10-10T03:36:33.398Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:36:33.399Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:36:33.399Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jocelia-festas-1f6fe/versions [none]
+[debug] [2025-10-10T03:36:33.399Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jocelia-festas-1f6fe/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-10-10T03:36:34.729Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jocelia-festas-1f6fe/versions 200
+[debug] [2025-10-10T03:36:34.729Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jocelia-festas-1f6fe/versions {"name":"projects/629624073079/sites/jocelia-festas-1f6fe/versions/4dcb5f77dad66fd7","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-10-10T03:36:34.730Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:36:34.730Z] Checked if tokens are valid: true, expires at: 1760070759452
+[debug] [2025-10-10T03:36:34.730Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/jocelia-festas-1f6fe/billingInfo [none]
+[debug] [2025-10-10T03:36:36.490Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/jocelia-festas-1f6fe/billingInfo 200
+[debug] [2025-10-10T03:36:36.490Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/jocelia-festas-1f6fe/billingInfo {"name":"projects/jocelia-festas-1f6fe/billingInfo","projectId":"jocelia-festas-1f6fe","billingAccountName":"billingAccounts/016034-366EE7-317E58","billingEnabled":true}
+[info] i  hosting[jocelia-festas-1f6fe]: beginning deploy... 
+[info] i  hosting[jocelia-festas-1f6fe]: found 371291 files in . 
+[debug] [2025-10-10T03:37:51.048Z] [hosting] uploading with 200 concurrency
+[debug] [2025-10-10T03:37:51.050Z] [hosting] hash cache [] not populated
+[debug] [2025-10-10T03:37:51.238Z] Error: EBUSY: resource busy or locked, open 'C:\Users\Pedro Max\ntuser.dat.log1'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-10-10T03:37:51.239Z] Error: EBUSY: resource busy or locked, open 'C:\Users\Pedro Max\ntuser.dat.log2'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-10-10T03:37:51.250Z] Error: EBUSY: resource busy or locked, open 'C:\Users\Pedro Max\ntuser.dat'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-10-10T03:37:51.261Z] Error: EISDIR: illegal operation on a directory, read
+[error] 
+[error] Error: An unexpected error has occurred.

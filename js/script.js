@@ -255,4 +255,59 @@ window.addEventListener('click', function (e) {
   if (e.target === modal) {
     modal.style.display = 'none';
   }
+
+  // Inicializar Firebase se ainda não tiver
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+const db = firebase.firestore();
+
+// Buscar produtos do Firestore
+async function carregarProdutosFirebase() {
+  const produtosFirebase = [];
+  try {
+    const snapshot = await db.collection("produtos").get();
+    snapshot.forEach(doc => {
+      const produto = doc.data();
+      produtosFirebase.push({
+        id: doc.id,
+        nome: produto.nome,
+        preco: produto.preco,
+        descricao: produto.descricao,
+        categoria: produto.categoria,
+        imagens: produto.imagens || [],
+        destaque: produto.destaque || false,
+        tags: produto.tags || []
+      });
+    });
+  } catch (err) {
+    console.error("Erro ao carregar do Firebase:", err);
+  }
+  return produtosFirebase;
+}
+
+// Carregar tudo (JSON + Firebase)
+async function carregarTodosProdutos() {
+  try {
+    // Do JSON
+    const response = await fetch("produtos.json");
+    const produtosJSON = await response.json();
+
+    // Do Firebase
+    const produtosFirebase = await carregarProdutosFirebase();
+
+    // Junta
+    const todosProdutos = [...produtosJSON, ...produtosFirebase];
+
+    // Renderiza
+    renderizarProdutos(todosProdutos);
+  } catch (err) {
+    console.error("Erro ao carregar produtos:", err);
+  }
+}
+
+// Chamar quando a página carregar
+window.addEventListener("DOMContentLoaded", carregarTodosProdutos);
+
+
 });
