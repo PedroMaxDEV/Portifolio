@@ -32,7 +32,7 @@
     },
 
     {
-        "tipo": "slide",
+        "tipo": "carrossel",
         "arquivos": [
             "midias/data1.png",
             "midias/data2.png",
