@@ -49,6 +49,13 @@
         "descricao": "Conteudo promocional",
         "data": "2025-02-05"
 },
+{
+        "tipo": "video",
+        "arquivo": "midias/banner.mp4",
+        "titulo": "Banner para instagram",
+        "descricao": "Deixando o perfil mais organizado!",
+        "data": "2025-02-10"
+    },
 
  {
         "tipo": "carrossel",
@@ -104,4 +111,6 @@
         "descricao": "",
         "data": "2025-02-05"
 }
+
+
 ]

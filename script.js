@@ -182,3 +182,159 @@ function inicializarArraste() {
    INICIAR SISTEMA
 ============================================================ */
 carregarPortfolio();
+
+
+const canvas = document.getElementById("bg-canvas");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+const dots = [];
+const DOTS_QTD = 60;
+const MAX_DISTANCE = 150;
+
+for (let i = 0; i < DOTS_QTD; i++) {
+    dots.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6
+    });
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // pontos
+    ctx.fillStyle = "rgba(180,180,180,0.8)";
+    dots.forEach(dot => {
+        ctx.beginPath();
+        ctx.arc(dot.x, dot.y, 2.5, 0, Math.PI * 2);
+        ctx.fill();
+    });
+
+    // linhas conectando pontos próximos
+    ctx.strokeStyle = "rgba(150,150,150,0.4)";
+    dots.forEach((a, i) => {
+        dots.slice(i + 1).forEach(b => {
+            const dist = Math.hypot(a.x - b.x, a.y - b.y);
+            if (dist < MAX_DISTANCE) {
+                ctx.lineWidth = 1 - dist / MAX_DISTANCE;
+                ctx.beginPath();
+                ctx.moveTo(a.x, a.y);
+                ctx.lineTo(b.x, b.y);
+                ctx.stroke();
+            }
+        });
+    });
+
+    // movimento
+    dots.forEach(dot => {
+        dot.x += dot.vx;
+        dot.y += dot.vy;
+
+        if (dot.x < 0 || dot.x > canvas.width) dot.vx *= -1;
+        if (dot.y < 0 || dot.y > canvas.height) dot.vy *= -1;
+    });
+
+    requestAnimationFrame(draw);
+}
+
+draw();
+
+/* ---------- TYPING EFFECT ---------- 
+   words = array de frases/roles que aparecem em loop
+   speed: typing speed in ms per char
+*/
+(function typingEffect(){
+  const el = document.getElementById('typed');
+  if (!el) return;
+
+  const words = [
+    "Photoshop • Illustrator",
+    "Design para redes sociais",
+    "Carrosséis, Banners e Motion",
+    "Identidade visual e logos"
+  ];
+  const typingSpeed = 45;
+  const pauseBetween = 1400;
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function tick(){
+    const current = words[wordIndex];
+    if (!isDeleting){
+      el.textContent = current.slice(0, charIndex + 1);
+      charIndex++;
+      if (charIndex === current.length){
+        isDeleting = true;
+        setTimeout(tick, pauseBetween);
+        return;
+      }
+    } else {
+      el.textContent = current.slice(0, charIndex - 1);
+      charIndex--;
+      if (charIndex === 0){
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
+    }
+    setTimeout(tick, isDeleting ? typingSpeed / 2 : typingSpeed);
+  }
+  tick();
+})();
+
+/* ---------- LOADER: esconde quando a janela terminar de carregar ---------- */
+window.addEventListener('load', () => {
+  const loader = document.getElementById('page-loader');
+  if (!loader) return;
+  loader.style.transition = 'opacity .6s ease, visibility .6s';
+  loader.style.opacity = '0';
+  setTimeout(() => loader.remove(), 700);
+});
+const textos = [
+    "Designer Gráfico",
+    "Criador de Carrosséis",
+    "Editor de Vídeos",
+    "Social Media"
+];
+
+let indexTexto = 0;
+let indexLetra = 0;
+const el = document.getElementById("typing");
+
+function digitar() {
+    const txt = textos[indexTexto];
+    el.textContent = txt.substring(0, indexLetra);
+
+    indexLetra++;
+
+    if (indexLetra <= txt.length) {
+        setTimeout(digitar, 80);
+    } else {
+        setTimeout(apagar, 1500);
+    }
+}
+
+function apagar() {
+    const txt = textos[indexTexto];
+    el.textContent = txt.substring(0, indexLetra);
+
+    indexLetra--;
+
+    if (indexLetra >= 0) {
+        setTimeout(apagar, 40);
+    } else {
+        indexTexto = (indexTexto + 1) % textos.length;
+        setTimeout(digitar, 200);
+    }
+}
+
+digitar();

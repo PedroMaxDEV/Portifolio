@@ -7,12 +7,50 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<canvas id="bg-canvas"></canvas>
 
 <header class="hero">
-    <img src="midias/minha-foto.jpg" alt="Minha Foto" class="foto-perfil" />
-    <h1>Pedro Max</h1>
-    <p>Designer especializado em posts, carrosséis, stories, flyers A4 e motion para redes sociais.</p>
+  <!-- Loader (fica por cima, some quando carregar) -->
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader-box">
+      <div class="loader-logo">MAX</div>
+      <div class="loader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- Hero / Perfil -->
+  <div class="hero-inner">
+    <div class="foto-wrap">
+      <img src="midias/minha-foto.jpg" alt="Pedro Max" class="foto-perfil" />
+      <div class="neon-ring"></div>
+    </div>
+
+    <div class="hero-text">
+      <h1>Pedro Max</h1>
+
+      <!-- typing effect -->
+      <div class="role-wrap">
+        <span id="typed"></span><span class="typed-cursor">|</span>
+      </div>
+
+      <p class="hero-sub">Designer especializado em posts, carrosséis, stories, flyers A4 e motion.</p>
+
+      <!-- redes (opcional) -->
+      <div class="social-links">
+        <a href="https://wa.me/55SEUNUMERO" target="_blank" rel="noopener noreferrer">
+          <img src="midias/whatsapp-white.svg" alt="WhatsApp">
+        </a>
+        <a href="https://instagram.com/SEUINSTAGRAM" target="_blank" rel="noopener noreferrer">
+          <img src="midias/instagram-white.png" alt="Instagram">
+        </a>
+        <a href="https://github.com/SEUGITHUB" target="_blank" rel="noopener noreferrer">
+          <img src="midias/github-white.svg" alt="GitHub">
+        </a>
+      </div>
+    </div>
+  </div>
 </header>
+
 
 <section id="portfolio" class="portfolio"></section>
 
