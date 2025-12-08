@@ -19,5 +19,12 @@
         "tipo": "a4",
         "arquivo": "midias/postcarrosel.png",
         "data": "2025-02-02"
+    },
+    {
+        "tipo": "Timelaps da cracao do post Carrosel",
+        "arquivo": "midias/Criacao_Post_Carrossel_Ubannet.mp4",
+        "titulo": "Vídeo editado",
+        "descricao": "Edição no After Effects.",
+        "data": "2025-02-10"
     }
 ]
