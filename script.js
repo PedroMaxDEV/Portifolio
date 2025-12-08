@@ -258,7 +258,7 @@ draw();
   const words = [
     "Photoshop • Illustrator",
     "Design para redes sociais",
-    "Carrosséis, Banners e Motion",
+    "Carrosséis, Banners",
     "Identidade visual e logos"
   ];
   const typingSpeed = 45;

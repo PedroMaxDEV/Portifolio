@@ -334,9 +334,9 @@ body {
 }
 .loader-logo{
   width:72px;height:72px;border-radius:14px;
-  background:linear-gradient(135deg,#06b6d4,#7c3aed);
+  background:linear-gradient(135deg,#565656,#ffffff);
   display:flex;align-items:center;justify-content:center;
-  font-weight:700;color:#fff;font-size:20px;box-shadow:0 8px 30px rgba(0,0,0,0.6);
+  font-weight:700;color:#000000;font-size:20px;box-shadow:0 8px 30px rgba(0,0,0,0.6);
   transform:scale(0.98);
   animation: loader-pop .9s ease infinite;
 }
@@ -350,13 +350,12 @@ body {
 .foto-perfil:hover{ transform: translateY(-6px) scale(1.03); }
 
 /* neon ring behind photo */
-.neon-ring{
+/*.neon-ring{
   position:absolute; inset:0; border-radius:50%; z-index:1;
   box-shadow: 0 0 30px rgba(6,182,212,0.18), 0 0 60px rgba(124,58,237,0.12), inset 0 0 18px rgba(6,182,212,0.06);
-  transform: scale(1);
+  transform: scale(7);
   animation: neon-pulse 2.6s ease-in-out infinite;
 }
-
 /* pulse effect around photo */
 @keyframes neon-pulse{
   0%{ transform:scale(0.96); filter: blur(0px); opacity:0.95 }
@@ -368,7 +367,7 @@ body {
 .hero-text h1{ font-size:1.9rem; margin-bottom:6px; font-weight:700; }
 .role-wrap{ height:28px; margin-bottom:8px; display:flex; align-items:center; gap:6px; }
 #typed{ color:#dbeafe; font-weight:600; font-size:1rem; }
-.typed-cursor{ color:#06b6d4; font-weight:700; animation: blink 1s infinite; }
+.typed-cursor{ color:#dedede; font-weight:700; animation: blink 1s infinite; }
 @keyframes blink{ 0%,49%{opacity:1} 50%,100%{opacity:0} }
 
 .hero-sub{ color:rgba(255,255,255,0.75); margin-bottom:12px; max-width:620px; }
@@ -427,4 +426,47 @@ body {
     border-right: 2px solid #fff; /* cursor */
     padding-right: 4px;
     display: inline-block;
+}
+.texto-header {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.typing-container {
+    font-size: 1.3rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#typing {
+    border-right: 2px solid #fff;
+    padding-right: 4px;
+    display: inline-block;
+   display: flex; justify-content: center;
+  
+}
+.descricao-fixa {
+    max-width: 320px; /* mantém centralizado no mobile */
+    line-height: 1.4;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Ajuste para celular */
+@media (max-width: 480px) {
+    .typing-container {
+        font-size: 1.1rem;
+    }
+
+    .descricao-fixa {
+        max-width: 260px;
+    }
 }
