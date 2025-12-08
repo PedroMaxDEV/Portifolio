@@ -102,18 +102,21 @@ function inicializarSlides() {
    CARROSSEL COM ARRASTE (story/feed/carrossel)
 ============================================================ */
 function inicializarArraste() {
-    document.querySelectorAll(".draggable").forEach(container => {
-        const carrossel = container.querySelector(".carrossel");
+    document.querySelectorAll(".carrossel-container.draggable").forEach(container => {
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+        // variáveis do drag por mouse
         let isDown = false;
         let startX;
-        let scrollLeft;
+        let scrollStart;
 
-        // Mouse
+        // MOUSE events
         container.addEventListener("mousedown", (e) => {
             isDown = true;
             container.classList.add("active");
             startX = e.pageX - container.offsetLeft;
-            scrollLeft = carrossel.offsetLeft;
+            scrollStart = container.scrollLeft;
+            e.preventDefault();
         });
 
         container.addEventListener("mouseleave", () => {
@@ -128,32 +131,52 @@ function inicializarArraste() {
 
         container.addEventListener("mousemove", (e) => {
             if (!isDown) return;
-            e.preventDefault();
-
             const x = e.pageX - container.offsetLeft;
-            const walk = (x - startX);
-
-            carrossel.style.transform = `translateX(${walk}px)`;
+            const walk = x - startX;
+            container.scrollLeft = scrollStart - walk;
         });
 
-        // TOUCH (celular)
-        let touchStart = 0;
-        let currentX = 0;
+        // TOUCH events (mobile)
+        let touchStartX = 0;
+        let touchScrollStart = 0;
 
         container.addEventListener("touchstart", (e) => {
-            touchStart = e.touches[0].clientX;
-        });
+            touchStartX = e.touches[0].clientX;
+            touchScrollStart = container.scrollLeft;
+        }, {passive: true});
 
         container.addEventListener("touchmove", (e) => {
-            currentX = e.touches[0].clientX - touchStart;
-            carrossel.style.transform = `translateX(${currentX}px)`;
-        });
+            const x = e.touches[0].clientX;
+            const walk = x - touchStartX;
+            container.scrollLeft = touchScrollStart - walk;
+        }, {passive: true});
 
+        // Opcional: snap automático ao soltar — centra na imagem mais próxima
         container.addEventListener("touchend", () => {
-            carrossel.style.transform = "translateX(0)";
+            snapToNearest(container);
+        });
+        container.addEventListener("mouseup", () => {
+            snapToNearest(container);
+        });
+        container.addEventListener("mouseleave", () => {
+            snapToNearest(container);
         });
     });
+
+    // função helper para snap
+    function snapToNearest(container) {
+        const children = Array.from(container.querySelectorAll(".carrossel img"));
+        if (children.length === 0) return;
+        const containerWidth = container.clientWidth;
+        // calcula o índice mais próximo com base no scrollLeft
+        const index = Math.round(container.scrollLeft / containerWidth);
+        container.scrollTo({
+            left: index * containerWidth,
+            behavior: 'smooth'
+        });
+    }
 }
+
 
 /* ============================================================
    INICIAR SISTEMA

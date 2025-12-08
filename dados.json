@@ -17,13 +17,14 @@
             "midias/UBANNET_06.png"
         ],
         "titulo":"Resultado do Carrossel",
+        "descricao":"Arraste para o lado ->",
         "data": "2025-02-08"
     },
 
     {
         "tipo": "video",
         "arquivo": "midias/Criacao_Post_Carrossel_Ubannet.mp4",
-        "titulo": "Timelapse de Criação",
+        "titulo": "Timelapse",
         "descricao": "Vídeo apresentando o processo de criação",
         "data": "2025-02-10"
     },
@@ -36,9 +37,71 @@
             "midias/data3.png"
         ],
         "titulo": "Slide de Apresentação",
-        "descricao": "Slides modernos desenvolvidos com layout limpo e visual corporativo.",
+        "descricao": "Trabalho da Faculdade.",
         "data": "2025-02-05"
-    }
+    },
+ {
+        "tipo": "carrossel",
+        "arquivos": [
+            "midias/personal.jpg"
+        ],
+        "titulo": "Post de feed para personal",
+        "descricao": "Conteudo promocional",
+        "data": "2025-02-05"
+},
 
-
+ {
+        "tipo": "carrossel",
+        "arquivos": [
+            "midias/fut.jpg"
+        ],
+        "titulo": "Post de story de Futbol",
+        "descricao": "",
+        "data": "2025-02-05"
+},
+{
+        "tipo": "carrossel",
+        "arquivos": [
+            "midias/fut1.jpg"
+        ],
+        "titulo": "Post de story de Futbol",
+        "descricao": "",
+        "data": "2025-02-05"
+},
+{
+        "tipo": "carrossel",
+        "arquivos": [
+            "midias/fut2.jpg"
+        ],
+        "titulo": "Post de story de Futbol",
+        "descricao": "",
+        "data": "2025-02-05"
+},
+{
+        "tipo": "carrossel",
+        "arquivos": [
+            "midias/evento.jpg"
+        ],
+        "titulo": "Post de feed para evento de DJ",
+        "descricao": "",
+        "data": "2025-02-05"
+},
+{
+        "tipo": "carrossel",
+        "arquivos": [
+            "midias/evento2.jpg"
+        ],
+        "titulo": "Post de story para evento de DJ",
+        "descricao": "",
+        "data": "2025-02-05"
+},
+{
+        "tipo": "carrossel",
+        "arquivos": [
+            "midias/logo.jpg"
+        ],
+        "titulo": "LOGOMARCA",
+        "descricao": "",
+        "data": "2025-02-05"
+}
 ]
