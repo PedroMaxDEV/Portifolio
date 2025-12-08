@@ -1,7 +1,12 @@
 [
-   
-
-     {
+ {
+        "tipo": "a4",
+        "arquivo": "midias/postcarrosel.png",
+        "titulo": "Carrossel para Provedor de Internet",
+        "descricao": "Sequência completa de artes profissionais desenvolvidas para a UBANNET, com foco em comunicação digital e conversão.",
+        "data": "2025-02-02"
+    },
+    {
         "tipo": "carrossel",
         "arquivos": [
             "midias/UBANNET_01.png",
@@ -11,40 +16,29 @@
             "midias/UBANNET_05.png",
             "midias/UBANNET_06.png"
         ],
-        "titulo": "Carrossel Redes Sociais para empresa de provedor de internet",
-        "descricao": "3 páginas de Instagram.",
+        "titulo":"Resultado do Carrossel",
         "data": "2025-02-08"
     },
-        {
-        "tipo": "a4",
-        "arquivo": "midias/postcarrosel.png",
-        "data": "2025-02-02"
-    },
+
     {
         "tipo": "video",
         "arquivo": "midias/Criacao_Post_Carrossel_Ubannet.mp4",
-        "titulo": "Timelaps",
-        "descricao": "Criativo carrosel",
+        "titulo": "Timelapse de Criação",
+        "descricao": "Vídeo apresentando o processo de criação",
         "data": "2025-02-10"
     },
+
     {
         "tipo": "slide",
         "arquivos": [
-            "midias/s1.png",
-            "midias/s2.png"
+            "midias/data1.png",
+            "midias/data2.png",
+            "midias/data3.png"
         ],
-        "titulo": "Slide de apresentação",
-        "descricao": "Slide profissional.",
+        "titulo": "Slide de Apresentação",
+        "descricao": "Slides modernos desenvolvidos com layout limpo e visual corporativo.",
         "data": "2025-02-05"
     }
 
 
-
-
-
-
 ]
-
-
-
-

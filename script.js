@@ -2,138 +2,160 @@ async function carregarPortfolio() {
     const req = await fetch("dados.json");
     const dados = await req.json();
 
-    // Ordenar por data (mais recente primeiro)
-    dados.sort((a, b) => new Date(b.data) - new Date(a.data));
-
     const container = document.getElementById("portfolio");
 
     dados.forEach(item => {
-        const card = document.createElement("div");
-        card.classList.add("item");
+        const div = document.createElement("div");
+        div.classList.add("item", item.tipo);
 
-        // ============================================================
-        // 1 — IMAGEM ÚNICA
-        // ============================================================
-        if (item.tipo === "imagem") {
-            card.innerHTML = `
-                <img src="${item.arquivo}" class="img-unica">
-                <div class="texto">
-                    <h3>${item.titulo || ""}</h3>
-                    <p>${item.descricao || ""}</p>
-                </div>
-            `;
-        }
+        let htmlMidia = "";
 
-        // ============================================================
-        // 2 — VÍDEO
-        // ============================================================
+        /* ============================================================
+           VÍDEO
+        ============================================================ */
         if (item.tipo === "video") {
-            card.innerHTML = `
-                <video src="${item.arquivo}" controls class="video"></video>
-                <div class="texto">
-                    <h3>${item.titulo || ""}</h3>
-                    <p>${item.descricao || ""}</p>
-                </div>
-            `;
+            htmlMidia = `<video src="${item.arquivo}" controls></video>`;
         }
 
-        // ============================================================
-        // 3 — CARROSSEL (desliza horizontal)
-        // ============================================================
-        if (item.tipo === "carrossel") {
-            const imagens = item.arquivos
-                .map(img => `<img src="${img}" class="carrossel-img">`)
-                .join("");
-
-            card.innerHTML = `
-                <div class="carrossel">
-                    <div class="carrossel-track">
-                        ${imagens}
+        /* ============================================================
+           CARROSSEL (ARRASTÁVEL)
+        ============================================================ */
+        else if (item.tipo === "carrossel") {
+            htmlMidia = `
+                <div class="carrossel-container draggable">
+                    <div class="carrossel">
+                        ${item.arquivos.map(img => `<img src="${img}">`).join("")}
                     </div>
                 </div>
-                <div class="texto">
-                    <h3>${item.titulo || ""}</h3>
-                    <p>${item.descricao || ""}</p>
-                </div>
             `;
         }
 
-        // ============================================================
-        // 4 — SLIDES COM BOTÕES
-        // ============================================================
-        if (item.tipo === "slide") {
-            const imagens = item.arquivos
-                .map(img => `<img src="${img}" class="slide-img">`)
-                .join("");
-
-            const idSlide = "slide_" + Math.random().toString(36).substr(2, 9);
-
-            card.innerHTML = `
-                <div class="slide-container" id="${idSlide}">
-                    <button class="prev">◀</button>
-                    <div class="slide-view">
-                        ${imagens}
+        /* ============================================================
+           SLIDE (BOTÕES)
+        ============================================================ */
+        else if (item.tipo === "slide") {
+            htmlMidia = `
+                <div class="carrossel-container slide-mode">
+                    <div class="carrossel">
+                        ${item.arquivos.map(img => `<img src="${img}">`).join("")}
                     </div>
-                    <button class="next">▶</button>
-                </div>
 
-                <div class="texto">
-                    <h3>${item.titulo || ""}</h3>
-                    <p>${item.descricao || ""}</p>
-                </div>
-            `;
-
-            // Função do slide
-            setTimeout(() => iniciarSlide(idSlide), 50);
-        }
-
-        // ============================================================
-        // 5 — FORMATO A4
-        // ============================================================
-        if (item.tipo === "a4") {
-            card.innerHTML = `
-                <img src="${item.arquivo}" class="a4-img">
-                <div class="texto">
-                    <h3>${item.titulo || ""}</h3>
-                    <p>${item.descricao || ""}</p>
+                    <button class="btn-prev">❮</button>
+                    <button class="btn-next">❯</button>
                 </div>
             `;
         }
 
-        // Inserir no container
-        container.appendChild(card);
+        /* ============================================================
+           FEED, STORY, A4 (1 imagem)
+        ============================================================ */
+        else {
+            htmlMidia = `<img src="${item.arquivo}" alt="">`;
+        }
 
-        // Animação
-        setTimeout(() => card.classList.add("show"), 100);
+        /* ============================================================
+           TEMPLATE DO ITEM
+        ============================================================ */
+        div.innerHTML = `
+            ${htmlMidia}
+
+            <div class="texto">
+                <h3>${item.titulo || ""}</h3>
+                <p>${item.descricao || ""}</p>
+            </div>
+        `;
+
+        container.appendChild(div);
+
+        setTimeout(() => div.classList.add("show"), 50);
+    });
+
+    inicializarSlides();
+    inicializarArraste();
+}
+
+/* ============================================================
+   SLIDES COM BOTÕES (APENAS TIPO: slide)
+============================================================ */
+function inicializarSlides() {
+    document.querySelectorAll(".slide-mode").forEach(box => {
+        const carrossel = box.querySelector(".carrossel");
+        const imagens = carrossel.querySelectorAll("img");
+        let pos = 0;
+
+        const prev = box.querySelector(".btn-prev");
+        const next = box.querySelector(".btn-next");
+
+        next.onclick = () => {
+            pos = (pos + 1) % imagens.length;
+            carrossel.style.transform = `translateX(-${pos * 100}%)`;
+        };
+
+        prev.onclick = () => {
+            pos = (pos - 1 + imagens.length) % imagens.length;
+            carrossel.style.transform = `translateX(-${pos * 100}%)`;
+        };
     });
 }
 
-/* =====================================================================
-   FUNÇÃO DO SLIDE (com botões ⇦ e ⇨)
-   ===================================================================== */
-function iniciarSlide(id) {
-    const container = document.getElementById(id);
-    const view = container.querySelector(".slide-view");
-    const slides = container.querySelectorAll(".slide-img");
+/* ============================================================
+   CARROSSEL COM ARRASTE (story/feed/carrossel)
+============================================================ */
+function inicializarArraste() {
+    document.querySelectorAll(".draggable").forEach(container => {
+        const carrossel = container.querySelector(".carrossel");
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-    let index = 0;
+        // Mouse
+        container.addEventListener("mousedown", (e) => {
+            isDown = true;
+            container.classList.add("active");
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = carrossel.offsetLeft;
+        });
 
-    const atualizarSlide = () => {
-        view.style.transform = `translateX(-${index * 100}%)`;
-    };
+        container.addEventListener("mouseleave", () => {
+            isDown = false;
+            container.classList.remove("active");
+        });
 
-    container.querySelector(".next").onclick = () => {
-        index = (index + 1) % slides.length;
-        atualizarSlide();
-    };
+        container.addEventListener("mouseup", () => {
+            isDown = false;
+            container.classList.remove("active");
+        });
 
-    container.querySelector(".prev").onclick = () => {
-        index = (index - 1 + slides.length) % slides.length;
-        atualizarSlide();
-    };
+        container.addEventListener("mousemove", (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX);
+
+            carrossel.style.transform = `translateX(${walk}px)`;
+        });
+
+        // TOUCH (celular)
+        let touchStart = 0;
+        let currentX = 0;
+
+        container.addEventListener("touchstart", (e) => {
+            touchStart = e.touches[0].clientX;
+        });
+
+        container.addEventListener("touchmove", (e) => {
+            currentX = e.touches[0].clientX - touchStart;
+            carrossel.style.transform = `translateX(${currentX}px)`;
+        });
+
+        container.addEventListener("touchend", () => {
+            carrossel.style.transform = "translateX(0)";
+        });
+    });
 }
 
-/* =====================================================================
-   INICIAR O SISTEMA
-   ===================================================================== */
+/* ============================================================
+   INICIAR SISTEMA
+============================================================ */
 carregarPortfolio();
