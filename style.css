@@ -470,3 +470,27 @@ body {
         max-width: 260px;
     }
 }
+.carrossel {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.carrossel::-webkit-scrollbar {
+    height: 8px; /* altura da barrinha */
+}
+
+.carrossel::-webkit-scrollbar-track {
+    background: #eee;
+    border-radius: 4px;
+}
+
+.carrossel::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.carrossel::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+

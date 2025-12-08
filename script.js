@@ -103,79 +103,80 @@ function inicializarSlides() {
 ============================================================ */
 function inicializarArraste() {
     document.querySelectorAll(".carrossel-container.draggable").forEach(container => {
-        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        const track = container.querySelector(".carrossel");
+        if (!track) return; // prevenção caso não exista
 
-        // variáveis do drag por mouse
+        const slides = Array.from(track.querySelectorAll("img"));
+        if (slides.length === 0) return;
+
         let isDown = false;
-        let startX;
-        let scrollStart;
+        let startX = 0;
+        let scrollStart = 0;
+        let activePointerId = null;
 
-        // MOUSE events
-        container.addEventListener("mousedown", (e) => {
+        // Função utilitária para obter largura de "slide" usada no snap.
+        function getSlideWidth() {
+            // Prioriza largura do primeiro slide; fallback para largura do container
+            const first = slides[0];
+            const rect = first.getBoundingClientRect();
+            const w = rect.width;
+            return (w && w > 0) ? w : container.clientWidth || 1;
+        }
+
+        // Pointer down (mouse/touch unificados)
+        container.addEventListener("pointerdown", (e) => {
+            // Somente botão primário do mouse ou toque
+            if (e.pointerType === "mouse" && e.button !== 0) return;
             isDown = true;
-            container.classList.add("active");
-            startX = e.pageX - container.offsetLeft;
+            activePointerId = e.pointerId;
+            startX = e.clientX;
             scrollStart = container.scrollLeft;
-            e.preventDefault();
+            container.classList.add("dragging");
+            try { container.setPointerCapture(e.pointerId); } catch (err) { /* ignora em ambientes que não suportam */ }
         });
 
-        container.addEventListener("mouseleave", () => {
-            isDown = false;
-            container.classList.remove("active");
-        });
-
-        container.addEventListener("mouseup", () => {
-            isDown = false;
-            container.classList.remove("active");
-        });
-
-        container.addEventListener("mousemove", (e) => {
-            if (!isDown) return;
-            const x = e.pageX - container.offsetLeft;
-            const walk = x - startX;
+        // Pointer move
+        container.addEventListener("pointermove", (e) => {
+            if (!isDown || e.pointerId !== activePointerId) return;
+            const walk = e.clientX - startX;
             container.scrollLeft = scrollStart - walk;
         });
 
-        // TOUCH events (mobile)
-        let touchStartX = 0;
-        let touchScrollStart = 0;
+        // End / cancel
+        function endDrag(e) {
+            if (!isDown || (e && e.pointerId !== activePointerId)) return;
+            isDown = false;
+            activePointerId = null;
+            container.classList.remove("dragging");
+            try { container.releasePointerCapture && container.releasePointerCapture(e.pointerId); } catch (err) {}
+            snapToClosest(container, slides);
+        }
 
-        container.addEventListener("touchstart", (e) => {
-            touchStartX = e.touches[0].clientX;
-            touchScrollStart = container.scrollLeft;
-        }, {passive: true});
-
-        container.addEventListener("touchmove", (e) => {
-            const x = e.touches[0].clientX;
-            const walk = x - touchStartX;
-            container.scrollLeft = touchScrollStart - walk;
-        }, {passive: true});
-
-        // Opcional: snap automático ao soltar — centra na imagem mais próxima
-        container.addEventListener("touchend", () => {
-            snapToNearest(container);
-        });
-        container.addEventListener("mouseup", () => {
-            snapToNearest(container);
-        });
-        container.addEventListener("mouseleave", () => {
-            snapToNearest(container);
-        });
+        container.addEventListener("pointerup", endDrag);
+        container.addEventListener("pointercancel", endDrag);
+        container.addEventListener("pointerleave", endDrag);
     });
 
-    // função helper para snap
-    function snapToNearest(container) {
-        const children = Array.from(container.querySelectorAll(".carrossel img"));
-        if (children.length === 0) return;
-        const containerWidth = container.clientWidth;
-        // calcula o índice mais próximo com base no scrollLeft
-        const index = Math.round(container.scrollLeft / containerWidth);
+    function snapToClosest(container, slides) {
+        if (!container || !slides || slides.length === 0) return;
+
+        const slideWidth = (function() {
+            const first = slides[0];
+            const rect = first.getBoundingClientRect();
+            return (rect && rect.width > 0) ? rect.width : container.clientWidth || 1;
+        })();
+
+        // evita divisão por zero
+        const index = Math.round(container.scrollLeft / slideWidth);
+        const left = Math.max(0, index * slideWidth);
+
         container.scrollTo({
-            left: index * containerWidth,
-            behavior: 'smooth'
+            left,
+            behavior: "smooth"
         });
     }
 }
+
 
 
 /* ============================================================
@@ -338,3 +339,4 @@ function apagar() {
 }
 
 digitar();
+
