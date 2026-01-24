@@ -43,6 +43,24 @@
         "data": "2025-02-05"
     },
 
+
+ {
+        "tipo": "carrossel",
+        "arquivos": [
+            "midias/TRILHA_01.png",
+            "midias/TRILHA_02.png",
+            "midias/TRILHA_03.png",
+            "midias/TRILHA_04.png",
+            "midias/TRILHA_05.png",
+            "midias/TRILHA_06.png"
+        ],
+        "titulo": "Esse carrossel é parte de um desafio de um processo seletivo 💻🎨",
+        "descricao": "Arraste para o lado →",
+        "data": "2025-02-08"
+    },
+
+
+
     {
         "tipo": "carrossel",
         "arquivos": [
