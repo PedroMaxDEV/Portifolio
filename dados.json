@@ -52,12 +52,32 @@
             "midias/TRILHA_03.png",
             "midias/TRILHA_04.png",
             "midias/TRILHA_05.png",
-            "midias/TRILHA_06.png"
+            "midias/TRILHA_06.png",
+            "midias/TRILHA_07.png"
         ],
-        "titulo": "Esse carrossel é parte de um desafio de um processo seletivo 💻🎨",
+        "titulo": "Esse carrossel é parte de um processo seletivo 💻🎨",
         "descricao": "Arraste para o lado →",
         "data": "2025-02-08"
     },
+
+ {
+        "tipo": "carrossel",
+        "arquivos": ["midias/Resultados enviados 2.jpg"],
+        "titulo": "Post de Story",
+        "descricao": "",
+        "data": "2025-02-05"
+    },
+
+
+     {
+        "tipo": "video",
+        "arquivo": "midias/UX e Ul video .mp4",
+        "titulo": "Timelapse de Criação",
+        "descricao": "Vídeo demonstrando o processo completo de criação das artes.",
+        "data": "2025-02-10"
+    },
+
+
 
 
 
