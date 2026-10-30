@@ -1,0 +1,10 @@
+{
+  "name": "maxdev-portfolio",
+  "private": true,
+  "scripts": {
+    "dev": "node sync-portfolio.cjs && node preview-server.cjs",
+    "sync": "node sync-portfolio.cjs",
+    "test": "node test-portfolio.cjs",
+    "check": "node --check script.js && node --check sync-portfolio.cjs"
+  }
+}

@@ -1,0 +1,13 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const root = __dirname;
+const projects = JSON.parse(fs.readFileSync(path.join(root, 'dados.json'), 'utf8').replace(/^\uFEFF/, ''));
+if (!Array.isArray(projects)) throw new Error('dados.json deve conter uma lista de projetos.');
+const serialized = JSON.stringify(projects).replace(/</g, '\\u003c');
+const block = `<script id="portfolio-data" type="application/json">${serialized}</script>`;
+const indexPath = path.join(root, 'index.html');
+let html = fs.readFileSync(indexPath, 'utf8');
+const existing = /<script id="portfolio-data" type="application\/json">[\s\S]*?<\/script>/;
+html = existing.test(html) ? html.replace(existing, () => block) : html.replace('</head>', `${block}</head>`);
+fs.writeFileSync(indexPath, html);
+console.log(`${projects.length} projetos incluídos no HTML para abertura local.`);

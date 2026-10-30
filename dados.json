@@ -1,149 +1,158 @@
 [
-    {
-        "tipo": "a4",
-        "arquivo": "midias/postcarrosel.png",
-        "titulo": "Carrossel para Provedor de Internet",
-        "descricao": "Sequência completa de artes profissionais desenvolvidas para a UBANNET, com foco em comunicação digital e conversão.",
-        "data": "2025-02-02"
-    },
-
-    {
-        "tipo": "carrossel",
-        "arquivos": [
-            "midias/UBANNET_01.png",
-            "midias/UBANNET_02.png",
-            "midias/UBANNET_03.png",
-            "midias/UBANNET_04.png",
-            "midias/UBANNET_05.png",
-            "midias/UBANNET_06.png",
-            "midias/UBANNET_07.png"
-        ],
-        "titulo": "Resultado do Carrossel",
-        "descricao": "Arraste para o lado →",
-        "data": "2025-02-08"
-    },
-
-    {
-        "tipo": "video",
-        "arquivo": "midias/Criacao_Post_Carrossel_Ubannet.mp4",
-        "titulo": "Timelapse de Criação",
-        "descricao": "Vídeo demonstrando o processo completo de criação das artes.",
-        "data": "2025-02-10"
-    },
-
-    {
-        "tipo": "carrossel",
-        "arquivos": [
-            "midias/data1.png",
-            "midias/data2.png",
-            "midias/data3.png"
-        ],
-        "titulo": "Slide de trabalho acadêmico",
-        "descricao": "Arraste para o lado →.",
-        "data": "2025-02-05"
-    },
-
-
- {
-        "tipo": "carrossel",
-        "arquivos": [
-            "midias/TRILHA_01.png",
-            "midias/TRILHA_02.png",
-            "midias/TRILHA_03.png",
-            "midias/TRILHA_04.png",
-            "midias/TRILHA_05.png",
-            "midias/TRILHA_06.png",
-            "midias/TRILHA_07.png"
-        ],
-        "titulo": "Esse carrossel é parte de um processo seletivo 💻🎨",
-        "descricao": "Arraste para o lado →",
-        "data": "2025-02-08"
-    },
-
- {
-        "tipo": "carrossel",
-        "arquivos": ["midias/1.png"],
-        "titulo": "Post de Story",
-        "descricao": "",
-        "data": "2025-02-05"
-    },
-
-
-     {
-        "tipo": "video",
-        "arquivo": "midias/UX e Ul video .mp4",
-        "titulo": "Timelapse de Criação",
-        "descricao": "Vídeo demonstrando o processo completo de criação das artes.",
-        "data": "2025-02-10"
-    },
-
-
-
-
-
-    {
-        "tipo": "carrossel",
-        "arquivos": [
-            "midias/personal.jpg"
-        ],
-        "titulo": "Post de Feed para Personal Trainer",
-        "descricao": "Conteúdo promocional desenvolvido para potencializar engajamento.",
-        "data": "2025-02-05"
-    },
-
-    {
-        "tipo": "video",
-        "arquivo": "midias/banner.mp4",
-        "titulo": "Banner para Instagram",
-        "descricao": "Animação criada para deixar o perfil mais organizado e atrativo.",
-        "data": "2025-02-10"
-    },
-
-    {
-        "tipo": "carrossel",
-        "arquivos": ["midias/fut.jpg"],
-        "titulo": "Post de Story de Futebol",
-        "descricao": "",
-        "data": "2025-02-05"
-    },
-
-    {
-        "tipo": "carrossel",
-        "arquivos": ["midias/fut1.jpg"],
-        "titulo": "Post de Story de Futebol",
-        "descricao": "",
-        "data": "2025-02-05"
-    },
-
-    {
-        "tipo": "carrossel",
-        "arquivos": ["midias/fut2.jpg"],
-        "titulo": "Post de Story de Futebol",
-        "descricao": "",
-        "data": "2025-02-05"
-    },
-
-    {
-        "tipo": "carrossel",
-        "arquivos": ["midias/evento.jpg"],
-        "titulo": "Post de Feed para Evento de DJ",
-        "descricao": "",
-        "data": "2025-02-05"
-    },
-
-    {
-        "tipo": "carrossel",
-        "arquivos": ["midias/evento2.jpg"],
-        "titulo": "Post de Story para Evento de DJ",
-        "descricao": "",
-        "data": "2025-02-05"
-    },
-
-    {
-        "tipo": "carrossel",
-        "arquivos": ["midias/logo.jpg"],
-        "titulo": "Logomarca",
-        "descricao": "",
-        "data": "2025-02-05"
-    }
+  {
+    "tipo": "a4",
+    "arquivo": "midias/postcarrosel.png",
+    "titulo": "Carrossel para Provedor de Internet",
+    "descricao": "Sequência completa de artes profissionais desenvolvidas para a UBANNET, com foco em comunicação digital e conversão.",
+    "data": "2025-02-02",
+    "projeto": "UBANNET · Comunicação digital"
+  },
+  {
+    "tipo": "carrossel",
+    "arquivos": [
+      "midias/UBANNET_01.png",
+      "midias/UBANNET_02.png",
+      "midias/UBANNET_03.png",
+      "midias/UBANNET_04.png",
+      "midias/UBANNET_05.png",
+      "midias/UBANNET_06.png",
+      "midias/UBANNET_07.png"
+    ],
+    "titulo": "Resultado do Carrossel",
+    "descricao": "Arraste para o lado →",
+    "data": "2025-02-08",
+    "projeto": "UBANNET · Comunicação digital"
+  },
+  {
+    "tipo": "video",
+    "arquivo": "midias/Criacao_Post_Carrossel_Ubannet.mp4",
+    "titulo": "Timelapse de Criação",
+    "descricao": "Vídeo demonstrando o processo completo de criação das artes.",
+    "data": "2025-02-10",
+    "projeto": "UBANNET · Comunicação digital"
+  },
+  {
+    "tipo": "slide",
+    "arquivos": [
+      "midias/data1.png",
+      "midias/data2.png",
+      "midias/data3.png"
+    ],
+    "titulo": "Slide de trabalho acadêmico",
+    "descricao": "Apresentação acadêmica. Explore as páginas completas e navegue pela projeção.",
+    "data": "2025-02-05",
+    "projeto": "Apresentação acadêmica"
+  },
+  {
+    "tipo": "carrossel",
+    "arquivos": [
+      "midias/TRILHA_01.png",
+      "midias/TRILHA_02.png",
+      "midias/TRILHA_03.png",
+      "midias/TRILHA_04.png",
+      "midias/TRILHA_05.png",
+      "midias/TRILHA_06.png",
+      "midias/TRILHA_07.png"
+    ],
+    "titulo": "Esse carrossel é parte de um processo seletivo 💻🎨",
+    "descricao": "Arraste para o lado →",
+    "data": "2025-02-08",
+    "projeto": "Processo seletivo · Design digital"
+  },
+  {
+    "tipo": "carrossel",
+    "arquivos": [
+      "midias/1.png"
+    ],
+    "titulo": "Post de Story",
+    "descricao": "",
+    "data": "2025-02-05",
+    "projeto": "Processo seletivo · Design digital"
+  },
+  {
+    "tipo": "video",
+    "arquivo": "midias/UX e Ul video .mp4",
+    "titulo": "Timelapse de Criação",
+    "descricao": "Vídeo demonstrando o processo completo de criação das artes.",
+    "data": "2025-02-10",
+    "projeto": "Processo seletivo · Design digital"
+  },
+  {
+    "tipo": "carrossel",
+    "arquivos": [
+      "midias/personal.jpg"
+    ],
+    "titulo": "Post de Feed para Personal Trainer",
+    "descricao": "Conteúdo promocional desenvolvido para potencializar engajamento.",
+    "data": "2025-02-05",
+    "projeto": "Personal trainer"
+  },
+  {
+    "tipo": "video",
+    "arquivo": "midias/banner.mp4",
+    "titulo": "Banner para Instagram",
+    "descricao": "Animação criada para deixar o perfil mais organizado e atrativo.",
+    "data": "2025-02-10",
+    "projeto": "Banner para Instagram"
+  },
+  {
+    "tipo": "carrossel",
+    "arquivos": [
+      "midias/fut.jpg"
+    ],
+    "titulo": "Post de Story de Futebol",
+    "descricao": "",
+    "data": "2025-02-05",
+    "projeto": "Futebol · Stories"
+  },
+  {
+    "tipo": "carrossel",
+    "arquivos": [
+      "midias/fut1.jpg"
+    ],
+    "titulo": "Post de Story de Futebol",
+    "descricao": "",
+    "data": "2025-02-05",
+    "projeto": "Futebol · Stories"
+  },
+  {
+    "tipo": "carrossel",
+    "arquivos": [
+      "midias/fut2.jpg"
+    ],
+    "titulo": "Post de Story de Futebol",
+    "descricao": "",
+    "data": "2025-02-05",
+    "projeto": "Futebol · Stories"
+  },
+  {
+    "tipo": "carrossel",
+    "arquivos": [
+      "midias/evento.jpg"
+    ],
+    "titulo": "Post de Feed para Evento de DJ",
+    "descricao": "",
+    "data": "2025-02-05",
+    "projeto": "Evento DJ"
+  },
+  {
+    "tipo": "carrossel",
+    "arquivos": [
+      "midias/evento2.jpg"
+    ],
+    "titulo": "Post de Story para Evento de DJ",
+    "descricao": "",
+    "data": "2025-02-05",
+    "projeto": "Evento DJ"
+  },
+  {
+    "tipo": "carrossel",
+    "arquivos": [
+      "midias/logo.jpg"
+    ],
+    "titulo": "Logomarca",
+    "descricao": "",
+    "data": "2025-02-05",
+    "projeto": "Identidade visual"
+  }
 ]
